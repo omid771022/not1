@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Kavenegar;
 use App\User;
 use App\Notifications\email;
 use Illuminate\Http\Request;

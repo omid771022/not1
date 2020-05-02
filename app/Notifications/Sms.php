@@ -3,9 +3,9 @@
 namespace App\Notifications;
 
 use Illuminate\Bus\Queueable;
+use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
-use Illuminate\Notifications\Notification;
 use Kavenegar\LaravelNotification\KavenegarChannel;
 
 class Sms extends Notification
@@ -51,9 +51,11 @@ class Sms extends Notification
 
      public function tokavenegar($notifiable){
 
-return __('mehr4-payment::auth.message',['code'=>$this->code,'app'=>setting('site.name')]);
+// return __('mehr4-payment::auth.message',['code'=>$this->code,'app'=>setting('site.name')]);
 
-     }
+return (new Sms)->content('Your SMS message content')->from('10000334');;   
+
+}
     /**
      * Get the array representation of the notification.
      *
